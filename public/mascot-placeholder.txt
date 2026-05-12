@@ -1,0 +1,2 @@
+<!-- This file is a placeholder for the mascot image -->
+<!-- The actual mascot image should be placed in the public folder as 'mascot.png' -->

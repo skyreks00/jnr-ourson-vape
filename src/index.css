@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-charcoal text-soft-gray antialiased;
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #35CFFF #111111;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #111111;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: #35CFFF;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-hover {
+    @apply hover:bg-white/10 hover:border-white/20 transition-all duration-300;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-electric-blue to-cotton-pink bg-clip-text text-transparent;
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(53, 207, 255, 0.5);
+  }
+  
+  .glow-pink {
+    box-shadow: 0 0 20px rgba(255, 122, 205, 0.5);
+  }
+  
+  .btn-glow {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .btn-glow::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-electric-blue to-cotton-pink opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn-glow:hover::before {
+    @apply opacity-20;
+  }
+
+  .bg-size-200 {
+    background-size: 200%;
+  }
+
+  .bg-pos-0 {
+    background-position: 0%;
+  }
+
+  .bg-pos-100 {
+    background-position: 100%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Hide number input spinner arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Calendar slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom select dropdown styling */
+select option {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 10px;
+}
+
+select option:checked,
+select option:hover {
+  background: linear-gradient(135deg, #35CFFF 0%, #FF7ACD 100%);
+  color: #ffffff;
+}
+
+select option[value=""] {
+  color: #999999;
+}
