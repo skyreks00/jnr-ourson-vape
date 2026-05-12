@@ -297,7 +297,7 @@ export default function OrderPage() {
                 {/* Product container */}
                 <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-8 shadow-2xl">
                   <img 
-                    src="/mascot.png" 
+                    src={`${import.meta.env.BASE_URL}mascot.png`}
                     alt="JNR 6000 Puffs"
                     className="w-full h-auto drop-shadow-2xl"
                     onError={(e) => {
